@@ -9,7 +9,7 @@ I provided the basic functionality to post a username, receive a jobId, and then
 
 ### Further Improvements 
 
-Going forward I'd add unit testing for all the functions. I'd refactor the async functions into pure functions and export them from the accountService.js file so that it'd be easy to test them in isolation. I'd mock the HTTP request/responses and make sure that the functions handled errors and returned the correct values based on the arguments passed to them. 
+Going forward I'd add unit testing for all the functions. My typical practice is to export async functions from their own file (accountService.js) and always have them return a value. This makes them easy to test in isolation. I'd refactor getAccounts() into a Promise which resolves when it receives a 200 response and returns that response. Then I'd mock the HTTP request/responses and test that the functions returned the correct response based on the values passed to them, including error handling. 
 
 I'd style the app based on the needs of the end user. 
 
